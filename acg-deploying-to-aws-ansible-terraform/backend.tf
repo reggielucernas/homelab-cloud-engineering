@@ -1,9 +1,16 @@
 terraform {
-    required_version = ">= 1.2.5"
-    backend "s3" {
-      region = "us-east-1"
-      profile = "default"
-      key = "terraform-state-file"
-      bucket = "terraform-state-bucket-rl0804"
+  required_version = ">= 1.2.5"
+  cloud {
+    organization = "rlucernas"
+
+    workspaces {
+      name = "acg-deploying-to-aws-ansible-terraform"
     }
+  }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.24.0"
+    }
+  }
 }
