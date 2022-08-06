@@ -12,3 +12,8 @@ variable "region-worker" {
   type    = string
   default = "us-west-2"
 }
+
+variable "default_cidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}
