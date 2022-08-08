@@ -1,6 +1,6 @@
 provider "aws" {
-  region = var.region-chief
-  alias  = "region-chief"
+  region = var.region-master
+  alias  = "region-master"
 }
 
 provider "aws" {
